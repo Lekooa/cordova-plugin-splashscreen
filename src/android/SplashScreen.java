@@ -200,20 +200,17 @@ public class SplashScreen extends CordovaPlugin {
 
     // Don't add @Override so that plugin still compiles on 3.x.x for a while
     public void onConfigurationChanged(Configuration newConfig) {
-        if (newConfig.orientation != orientation) {
-            // orientation = newConfig.orientation;
-            
-            // Hack to force portrait orientation
-            orientation = Configuration.ORIENTATION_PORTRAIT;
+        // if (newConfig.orientation != orientation) {
+        //     orientation = newConfig.orientation;
 
-            // Splash drawable may change with orientation, so reload it.
-            if (splashImageView != null) {
-                int drawableId = preferences.getInteger("SplashDrawableId", 0);
-                if (drawableId != 0) {
-                    splashImageView.setImageDrawable(cordova.getActivity().getResources().getDrawable(drawableId));
-                }
-            }
-        }
+        //     // Splash drawable may change with orientation, so reload it.
+        //     if (splashImageView != null) {
+        //         int drawableId = preferences.getInteger("SplashDrawableId", 0);
+        //         if (drawableId != 0) {
+        //             splashImageView.setImageDrawable(cordova.getActivity().getResources().getDrawable(drawableId));
+        //         }
+        //     }
+        // }
     }
 
     private void removeSplashScreen(final boolean forceHideImmediately) {
