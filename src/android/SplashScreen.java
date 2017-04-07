@@ -201,7 +201,10 @@ public class SplashScreen extends CordovaPlugin {
     // Don't add @Override so that plugin still compiles on 3.x.x for a while
     public void onConfigurationChanged(Configuration newConfig) {
         if (newConfig.orientation != orientation) {
-            orientation = newConfig.orientation;
+            // orientation = newConfig.orientation;
+            
+            // Hack to force portrait orientation
+            orientation = Configuration.ORIENTATION_PORTRAIT;
 
             // Splash drawable may change with orientation, so reload it.
             if (splashImageView != null) {
